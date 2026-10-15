@@ -1,0 +1,10 @@
+node_modules
+.next
+.vercel
+dist
+bun.lockb
+bun.lock
+public
+*.mdx
+*.md
+src/data/stars.ts
