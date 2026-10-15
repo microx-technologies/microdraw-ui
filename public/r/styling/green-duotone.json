@@ -11,7 +11,7 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "utils",
+    "https://microx-technologies.github.io/microdraw-ui/r/utils.json",
     "https://microx-technologies.github.io/microdraw-ui/r/button.json"
   ],
   "cssVars": {

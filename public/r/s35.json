@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "s35",
-  "type": "registry:component",
   "title": "Star 35",
   "files": [
     {
@@ -10,5 +9,6 @@
       "type": "registry:component",
       "target": "components/stars/s35.tsx"
     }
-  ]
+  ],
+  "type": "registry:component"
 }

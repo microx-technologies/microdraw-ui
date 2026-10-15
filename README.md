@@ -18,51 +18,56 @@ Hand-drawn, sketchy neobrutalist components built for [shadcn/ui](https://ui.sha
 
 ## 🚀 Quick Start
 
-### 1. Add the Sketchy Base Theme
+> [!IMPORTANT]
+> **Tailwind CSS v4 Prerequisite:**
+> Ensure your main stylesheet (e.g. `src/index.css` or `app/globals.css`) contains `@import "tailwindcss";` before adding components or themes. Running `shadcn add` on a completely empty (0-byte) stylesheet triggers a known upstream PostCSS crash in the shadcn CLI (`TypeError: Cannot read properties of undefined (reading 'proxyOf')`).
 
-Install the base theme and sketchy Tailwind utility tokens into your project:
+### 1. Register the `@microdraw` Namespace (Recommended)
 
-#### Bun
+Register the registry in your `components.json`:
+
 ```bash
-bun x --bun shadcn add https://microx-technologies.github.io/microdraw-ui/r/styling/neutral.json
-```
+# Bun
+bun x shadcn registry add @microdraw=https://microx-technologies.github.io/microdraw-ui/r/{name}.json
 
-#### pnpm
-```bash
-pnpm dlx shadcn add https://microx-technologies.github.io/microdraw-ui/r/styling/neutral.json
-```
+# pnpm
+pnpm dlx shadcn registry add @microdraw=https://microx-technologies.github.io/microdraw-ui/r/{name}.json
 
-#### npm / npx
-```bash
-npx shadcn add https://microx-technologies.github.io/microdraw-ui/r/styling/neutral.json
+# npm / npx
+npx shadcn registry add @microdraw=https://microx-technologies.github.io/microdraw-ui/r/{name}.json
 ```
 
 ---
 
-### 2. Add Components
+### 2. Add the Sketchy Base Theme
 
-Add any component directly using the registry URL:
+Install the base theme and sketchy Tailwind utility tokens into your project:
 
-#### Bun
+#### Using Registry Alias
 ```bash
-# Add a single component
+bun x shadcn add @microdraw/styling/neutral
+# or: npx shadcn add @microdraw/styling/neutral
+```
+
+#### Using Direct URL
+```bash
+bun x --bun shadcn add https://microx-technologies.github.io/microdraw-ui/r/styling/neutral.json
+# or: npx shadcn add https://microx-technologies.github.io/microdraw-ui/r/styling/neutral.json
+```
+
+---
+
+### 3. Add Components
+
+#### Using Registry Alias
+```bash
+bun x shadcn add @microdraw/button @microdraw/card @microdraw/dialog
+# or: npx shadcn add @microdraw/button @microdraw/card @microdraw/dialog
+```
+
+#### Using Direct URLs
+```bash
 bun x --bun shadcn add https://microx-technologies.github.io/microdraw-ui/r/button.json
-
-# Add multiple components
-bun x --bun shadcn add \
-  https://microx-technologies.github.io/microdraw-ui/r/card.json \
-  https://microx-technologies.github.io/microdraw-ui/r/input.json \
-  https://microx-technologies.github.io/microdraw-ui/r/dialog.json
-```
-
-#### pnpm
-```bash
-pnpm dlx shadcn add https://microx-technologies.github.io/microdraw-ui/r/button.json
-```
-
-#### npm / npx
-```bash
-npx shadcn add https://microx-technologies.github.io/microdraw-ui/r/button.json
 ```
 
 ---

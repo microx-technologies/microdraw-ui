@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "marquee",
-  "type": "registry:ui",
   "title": "Marquee",
   "files": [
     {
@@ -10,5 +9,6 @@
       "type": "registry:ui"
     }
   ],
-  "docs": "Make sure there is enough content in `items` so it loops perfectly. Visit https://jackwhiting.co.uk/posts/creating-a-marquee-with-tailwind to learn more."
+  "docs": "Make sure there is enough content in `items` so it loops perfectly. Visit https://jackwhiting.co.uk/posts/creating-a-marquee-with-tailwind to learn more.",
+  "type": "registry:ui"
 }
