@@ -7,7 +7,7 @@
     "cmdk"
   ],
   "registryDependencies": [
-    "https://neobrutalism.dev/r/ndialog.json"
+    "https://microx-technologies.github.io/microdraw-ui/r/ndialog.json"
   ],
   "files": [
     {

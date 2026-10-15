@@ -37,7 +37,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "https://neobrutalism.dev/r/nbutton.json"
+        "https://microx-technologies.github.io/microdraw-ui/r/nbutton.json"
       ],
       "files": [
         {
@@ -121,7 +121,7 @@
         "date-fns@^4"
       ],
       "registryDependencies": [
-        "https://neobrutalism.dev/r/nbutton.json"
+        "https://microx-technologies.github.io/microdraw-ui/r/nbutton.json"
       ],
       "files": [
         {
@@ -160,7 +160,7 @@
         "embla-carousel-react"
       ],
       "registryDependencies": [
-        "https://neobrutalism.dev/r/nbutton.json"
+        "https://microx-technologies.github.io/microdraw-ui/r/nbutton.json"
       ],
       "files": [
         {
@@ -178,7 +178,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "https://neobrutalism.dev/r/ncard.json"
+        "https://microx-technologies.github.io/microdraw-ui/r/ncard.json"
       ],
       "files": [
         {
@@ -223,7 +223,7 @@
         "cmdk"
       ],
       "registryDependencies": [
-        "https://neobrutalism.dev/r/ndialog.json"
+        "https://microx-technologies.github.io/microdraw-ui/r/ndialog.json"
       ],
       "files": [
         {
@@ -312,8 +312,8 @@
         "react-hook-form"
       ],
       "registryDependencies": [
-        "https://neobrutalism.dev/r/nbutton.json",
-        "https://neobrutalism.dev/r/nlabel.json"
+        "https://microx-technologies.github.io/microdraw-ui/r/nbutton.json",
+        "https://microx-technologies.github.io/microdraw-ui/r/nlabel.json"
       ],
       "files": [
         {
@@ -455,7 +455,7 @@
       "title": "Pagination",
       "type": "registry:ui",
       "registryDependencies": [
-        "https://neobrutalism.dev/r/nbutton.json"
+        "https://microx-technologies.github.io/microdraw-ui/r/nbutton.json"
       ],
       "files": [
         {
@@ -581,11 +581,11 @@
       "title": "Sidebar",
       "type": "registry:ui",
       "registryDependencies": [
-        "https://neobrutalism.dev/r/nbutton.json",
-        "https://neobrutalism.dev/r/nsheet.json",
-        "https://neobrutalism.dev/r/ntooltip.json",
-        "https://neobrutalism.dev/r/ninput.json",
-        "https://neobrutalism.dev/r/nskeleton.json"
+        "https://microx-technologies.github.io/microdraw-ui/r/nbutton.json",
+        "https://microx-technologies.github.io/microdraw-ui/r/nsheet.json",
+        "https://microx-technologies.github.io/microdraw-ui/r/ntooltip.json",
+        "https://microx-technologies.github.io/microdraw-ui/r/ninput.json",
+        "https://microx-technologies.github.io/microdraw-ui/r/nskeleton.json"
       ],
       "files": [
         {
@@ -721,7 +721,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "https://neobrutalism.dev/r/nbutton.json"
+        "https://microx-technologies.github.io/microdraw-ui/r/nbutton.json"
       ],
       "files": [
         {
@@ -796,7 +796,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "https://neobrutalism.dev/r/nlabel.json"
+        "https://microx-technologies.github.io/microdraw-ui/r/nlabel.json"
       ],
       "files": [
         {
@@ -813,9 +813,9 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "https://neobrutalism.dev/r/nbutton.json",
-        "https://neobrutalism.dev/r/ninput.json",
-        "https://neobrutalism.dev/r/ntextarea.json"
+        "https://microx-technologies.github.io/microdraw-ui/r/nbutton.json",
+        "https://microx-technologies.github.io/microdraw-ui/r/ninput.json",
+        "https://microx-technologies.github.io/microdraw-ui/r/ntextarea.json"
       ],
       "files": [
         {
@@ -885,7 +885,7 @@
         "@shadcn/react"
       ],
       "registryDependencies": [
-        "https://neobrutalism.dev/r/nbutton.json"
+        "https://microx-technologies.github.io/microdraw-ui/r/nbutton.json"
       ],
       "files": [
         {
@@ -917,7 +917,7 @@
         "@shadcn/react"
       ],
       "registryDependencies": [
-        "https://neobrutalism.dev/r/nbutton.json"
+        "https://microx-technologies.github.io/microdraw-ui/r/nbutton.json"
       ],
       "files": [
         {
@@ -949,7 +949,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "https://neobrutalism.dev/r/nbutton.json"
+        "https://microx-technologies.github.io/microdraw-ui/r/nbutton.json"
       ],
       "files": [
         {
@@ -982,7 +982,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "https://neobrutalism.dev/r/ntoggle.json"
+        "https://microx-technologies.github.io/microdraw-ui/r/ntoggle.json"
       ],
       "files": [
         {

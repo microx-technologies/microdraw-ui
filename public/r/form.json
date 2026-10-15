@@ -10,8 +10,8 @@
     "react-hook-form"
   ],
   "registryDependencies": [
-    "https://neobrutalism.dev/r/nbutton.json",
-    "https://neobrutalism.dev/r/nlabel.json"
+    "https://microx-technologies.github.io/microdraw-ui/r/nbutton.json",
+    "https://microx-technologies.github.io/microdraw-ui/r/nlabel.json"
   ],
   "files": [
     {
