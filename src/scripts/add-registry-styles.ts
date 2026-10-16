@@ -131,9 +131,9 @@ const STYLES = PALETTES.map((color) => ({
   description:
     "A collection of neobrutalism-styled components based on shadcn/ui.",
   dependencies: ["tw-animate-css", "class-variance-authority", "lucide-react"],
-  // Button is installed alongside the theme so init scaffolds a project
-  // with something already on the page.
-  registryDependencies: ["utils", `${SITE_URL}/r/button.json`],
+  // Button and utils are installed alongside the theme so init scaffolds a project
+  // with working primitives and class merging.
+  registryDependencies: [`${SITE_URL}/r/utils.json`, `${SITE_URL}/r/button.json`],
   cssVars: {
     light: {
       background: color.bg,
@@ -165,11 +165,40 @@ if (!fs.existsSync(dir)) {
 
 // Write all styles to files
 STYLES.forEach((style) => {
+  const shortName = style.name.replace("neobrutalism-", "")
+  const jsonContent = JSON.stringify(style, null, 2)
+  // Write to public/r/styling/<id>.json
+  fs.writeFileSync(path.join(dir, `${shortName}.json`), jsonContent)
+  // Also write to public/r/<id>.json for direct convenience
   fs.writeFileSync(
-    path.join(dir, `${style.name.replace("neobrutalism-", "")}.json`),
-    JSON.stringify(style, null, 2),
+    path.join(process.cwd(), "public", "r", `${shortName}.json`),
+    jsonContent,
   )
 })
+
+// Update registry.json so styles are discoverable in the registry catalog
+const registryPath = path.join(process.cwd(), "registry.json")
+if (fs.existsSync(registryPath)) {
+  const reg = JSON.parse(fs.readFileSync(registryPath, "utf8"))
+  const existingItems = (reg.items || []).filter(
+    (item: { type?: string }) => item.type !== "registry:style",
+  )
+  const styleItems = STYLES.map((style) => {
+    const shortName = style.name.replace("neobrutalism-", "")
+    return {
+      name: `styling/${shortName}`,
+      title: style.title,
+      type: "registry:style",
+      description: style.description,
+      dependencies: style.dependencies,
+      registryDependencies: style.registryDependencies,
+      cssVars: style.cssVars,
+      css: style.css,
+    }
+  })
+  reg.items = [...existingItems, ...styleItems]
+  fs.writeFileSync(registryPath, JSON.stringify(reg, null, 2) + "\n")
+}
 
 // Normalize line endings inside the generated registry items so the output
 // does not depend on the line endings of the checkout (git autocrlf on Windows).
@@ -185,4 +214,4 @@ fs.readdirSync(registryDir)
     )
   })
 
-console.log(`Wrote ${STYLES.length} styling items to ${dir}`)
+console.log(`Wrote ${STYLES.length} styling items to ${dir} and updated registry.json`)

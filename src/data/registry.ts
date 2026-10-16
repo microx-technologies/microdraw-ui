@@ -1352,6 +1352,20 @@ const STARS = [
   },
 ]
 
-const REGISTRY = [...UI, ...STARS]
+const LIB = [
+  {
+    name: "utils",
+    type: "registry:lib",
+    dependencies: ["clsx", "tailwind-merge"],
+    files: [
+      {
+        path: "src/lib/utils.ts",
+        type: "registry:lib",
+      },
+    ],
+  },
+]
+
+const REGISTRY = [...UI, ...STARS, ...LIB]
 
 export default REGISTRY

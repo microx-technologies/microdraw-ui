@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "utils",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "src/lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n\nexport function addSpaces(name: string) {\n  return name.replace(/([a-z])([A-Z])/g, \"$1 $2\")\n}\n\nexport function transformToSlug(input: string): string {\n  return input.toLowerCase().replace(/\\s+/g, \"-\")\n}\n\nexport function transformToName(input: string): string {\n  return input\n    .split(\"-\")\n    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))\n    .join(\" \")\n}\n\nexport function transformToPascalCase(input: string): string {\n  return input\n    .split(/\\s+/)\n    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())\n    .join(\"\")\n}\n",
+      "type": "registry:lib"
+    }
+  ],
+  "type": "registry:lib"
+}
