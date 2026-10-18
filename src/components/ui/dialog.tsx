@@ -5,6 +5,12 @@ import { X } from "lucide-react"
 
 import * as React from "react"
 
+import {
+  resolvePortalContainer,
+  useIsScoped,
+  usePortalScope,
+} from "@/components/ui/portal-scope"
+
 import { cn } from "@/lib/utils"
 
 function Dialog({
@@ -20,9 +26,17 @@ function DialogTrigger({
 }
 
 function DialogPortal({
+  container: containerProp,
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Portal>) {
-  return <DialogPrimitive.Portal data-slot="dialog-portal" {...props} />
+  const scope = usePortalScope()
+  return (
+    <DialogPrimitive.Portal
+      data-slot="dialog-portal"
+      container={resolvePortalContainer(containerProp, scope)}
+      {...props}
+    />
+  )
 }
 
 function DialogClose({
@@ -33,13 +47,20 @@ function DialogClose({
 
 function DialogOverlay({
   className,
+  scoped,
   ...props
-}: React.ComponentProps<typeof DialogPrimitive.Backdrop>) {
+}: React.ComponentProps<typeof DialogPrimitive.Backdrop> & {
+  scoped?: boolean
+}) {
+  const isScoped = useIsScoped(scoped)
   return (
     <DialogPrimitive.Backdrop
       data-slot="dialog-overlay"
+      data-scoped={isScoped ? "" : undefined}
       className={cn(
-        "fixed inset-0 z-50 bg-overlay duration-200 fill-mode-forwards data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-open:fade-in-0",
+        isScoped
+          ? "absolute inset-0 z-50 bg-overlay duration-200 fill-mode-forwards data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-open:fade-in-0"
+          : "fixed inset-0 z-50 bg-overlay duration-200 fill-mode-forwards data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-open:fade-in-0",
         className,
       )}
       {...props}
@@ -51,17 +72,23 @@ function DialogContent({
   className,
   children,
   showCloseButton = true,
+  scoped,
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Popup> & {
   showCloseButton?: boolean
+  scoped?: boolean
 }) {
+  const isScoped = useIsScoped(scoped)
   return (
     <DialogPortal>
-      <DialogOverlay />
+      <DialogOverlay scoped={isScoped} />
       <DialogPrimitive.Popup
         data-slot="dialog-content"
+        data-scoped={isScoped ? "" : undefined}
         className={cn(
-          "bg-background data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 rounded-sketchy-modal border-2 border-border p-6 shadow-shadow duration-200 outline-none sm:max-w-lg",
+          isScoped
+            ? "bg-background data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 absolute top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 rounded-sketchy-modal border-2 border-border p-6 shadow-shadow duration-200 outline-none sm:max-w-lg"
+            : "bg-background data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 rounded-sketchy-modal border-2 border-border p-6 shadow-shadow duration-200 outline-none sm:max-w-lg",
           className,
         )}
         {...props}

@@ -4,6 +4,8 @@ import { Popover as PopoverPrimitive } from "@base-ui/react/popover"
 
 import * as React from "react"
 
+import { usePortalScope } from "@/components/ui/portal-scope"
+
 import { cn } from "@/lib/utils"
 
 function Popover({
@@ -30,8 +32,9 @@ function PopoverContent({
     React.ComponentProps<typeof PopoverPrimitive.Positioner>,
     "align" | "alignOffset" | "side" | "sideOffset"
   >) {
+  const scope = usePortalScope()
   return (
-    <PopoverPrimitive.Portal>
+    <PopoverPrimitive.Portal container={scope ?? undefined}>
       <PopoverPrimitive.Positioner
         align={align}
         alignOffset={alignOffset}

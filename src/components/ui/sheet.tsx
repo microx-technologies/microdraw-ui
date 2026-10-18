@@ -5,6 +5,12 @@ import { X } from "lucide-react"
 
 import * as React from "react"
 
+import {
+  resolvePortalContainer,
+  useIsScoped,
+  usePortalScope,
+} from "@/components/ui/portal-scope"
+
 import { cn } from "@/lib/utils"
 
 function Sheet({ ...props }: React.ComponentProps<typeof SheetPrimitive.Root>) {
@@ -24,20 +30,34 @@ function SheetClose({
 }
 
 function SheetPortal({
+  container: containerProp,
   ...props
 }: React.ComponentProps<typeof SheetPrimitive.Portal>) {
-  return <SheetPrimitive.Portal data-slot="sheet-portal" {...props} />
+  const scope = usePortalScope()
+  return (
+    <SheetPrimitive.Portal
+      data-slot="sheet-portal"
+      container={resolvePortalContainer(containerProp, scope)}
+      {...props}
+    />
+  )
 }
 
 function SheetOverlay({
   className,
+  scoped,
   ...props
-}: React.ComponentProps<typeof SheetPrimitive.Backdrop>) {
+}: React.ComponentProps<typeof SheetPrimitive.Backdrop> & {
+  scoped?: boolean
+}) {
+  const isScoped = useIsScoped(scoped)
   return (
     <SheetPrimitive.Backdrop
       data-slot="sheet-overlay"
+      data-scoped={isScoped ? "" : undefined}
       className={cn(
-        "data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-open:fade-in-0 data-closed:duration-300 data-open:duration-500 fill-mode-forwards fixed inset-0 z-50 bg-overlay",
+        "data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-open:fade-in-0 data-closed:duration-300 data-open:duration-500 fill-mode-forwards bg-overlay",
+        isScoped ? "absolute inset-0 z-50" : "fixed inset-0 z-50",
         className,
       )}
       {...props}
@@ -50,19 +70,24 @@ function SheetContent({
   children,
   side = "right",
   showCloseButton = true,
+  scoped,
   ...props
 }: React.ComponentProps<typeof SheetPrimitive.Popup> & {
   side?: "top" | "bottom" | "left" | "right"
   showCloseButton?: boolean
+  scoped?: boolean
 }) {
+  const isScoped = useIsScoped(scoped)
   return (
     <SheetPortal>
-      <SheetOverlay />
+      <SheetOverlay scoped={isScoped} />
       <SheetPrimitive.Popup
         data-slot="sheet-content"
         data-side={side}
+        data-scoped={isScoped ? "" : undefined}
         className={cn(
-          "bg-background data-open:animate-in data-closed:animate-out fixed z-50 flex flex-col gap-4 rounded-sketchy-modal border-2 border-border outline-none transition ease-in-out data-closed:duration-300 data-open:duration-500",
+          "bg-background data-open:animate-in data-closed:animate-out flex flex-col gap-4 rounded-sketchy-modal border-2 border-border outline-none transition ease-in-out data-closed:duration-300 data-open:duration-500",
+          isScoped ? "absolute z-50" : "fixed z-50",
           side === "right" &&
             "data-closed:slide-out-to-right data-open:slide-in-from-right inset-y-0 right-0 h-full w-3/4 border-l sm:max-w-sm",
           side === "left" &&

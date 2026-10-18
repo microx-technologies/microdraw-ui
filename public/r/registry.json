@@ -33,11 +33,12 @@
       "name": "alert-dialog",
       "title": "Alert dialog",
       "type": "registry:ui",
+      "registryDependencies": [
+        "https://microx-technologies.github.io/microdraw-ui/r/nbutton.json",
+        "https://microx-technologies.github.io/microdraw-ui/r/portal-scope.json"
+      ],
       "dependencies": [
         "@base-ui/react"
-      ],
-      "registryDependencies": [
-        "https://microx-technologies.github.io/microdraw-ui/r/nbutton.json"
       ],
       "files": [
         {
@@ -249,6 +250,9 @@
     {
       "name": "ndialog",
       "type": "registry:ui",
+      "registryDependencies": [
+        "https://microx-technologies.github.io/microdraw-ui/r/portal-scope.json"
+      ],
       "dependencies": [
         "@base-ui/react"
       ],
@@ -263,6 +267,9 @@
       "name": "dialog",
       "title": "Dialog",
       "type": "registry:ui",
+      "registryDependencies": [
+        "https://microx-technologies.github.io/microdraw-ui/r/portal-scope.json"
+      ],
       "dependencies": [
         "@base-ui/react"
       ],
@@ -277,6 +284,9 @@
       "name": "drawer",
       "title": "Drawer",
       "type": "registry:ui",
+      "registryDependencies": [
+        "https://microx-technologies.github.io/microdraw-ui/r/portal-scope.json"
+      ],
       "dependencies": [
         "@base-ui/react"
       ],
@@ -326,6 +336,9 @@
       "name": "hover-card",
       "title": "Hover card",
       "type": "registry:ui",
+      "registryDependencies": [
+        "https://microx-technologies.github.io/microdraw-ui/r/portal-scope.json"
+      ],
       "dependencies": [
         "@base-ui/react"
       ],
@@ -465,9 +478,23 @@
       ]
     },
     {
+      "name": "portal-scope",
+      "title": "Portal scope",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "src/components/ui/portal-scope.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "popover",
       "title": "Popover",
       "type": "registry:ui",
+      "registryDependencies": [
+        "https://microx-technologies.github.io/microdraw-ui/r/portal-scope.json"
+      ],
       "dependencies": [
         "@base-ui/react"
       ],
@@ -552,6 +579,9 @@
       "name": "sheet",
       "title": "Sheet",
       "type": "registry:ui",
+      "registryDependencies": [
+        "https://microx-technologies.github.io/microdraw-ui/r/portal-scope.json"
+      ],
       "dependencies": [
         "@base-ui/react"
       ],
@@ -566,6 +596,9 @@
       "name": "nsheet",
       "title": "Sheet",
       "type": "registry:ui",
+      "registryDependencies": [
+        "https://microx-technologies.github.io/microdraw-ui/r/portal-scope.json"
+      ],
       "dependencies": [
         "@base-ui/react"
       ],
@@ -688,6 +721,9 @@
       "name": "tooltip",
       "title": "Tooltip",
       "type": "registry:ui",
+      "registryDependencies": [
+        "https://microx-technologies.github.io/microdraw-ui/r/portal-scope.json"
+      ],
       "dependencies": [
         "@base-ui/react"
       ],
@@ -702,6 +738,9 @@
       "name": "ntooltip",
       "title": "Tooltip",
       "type": "registry:ui",
+      "registryDependencies": [
+        "https://microx-technologies.github.io/microdraw-ui/r/portal-scope.json"
+      ],
       "dependencies": [
         "@base-ui/react"
       ],
@@ -1011,6 +1050,42 @@
       "files": [
         {
           "path": "src/components/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "browser-window",
+      "title": "Browser Window",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "src/components/ui/browser-window.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "section",
+      "title": "Section",
+      "type": "registry:ui",
+      "registryDependencies": [
+        "https://microx-technologies.github.io/microdraw-ui/r/nbutton.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/section.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "stat-pill",
+      "title": "Stat Pill",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "src/components/ui/stat-pill.tsx",
           "type": "registry:ui"
         }
       ]

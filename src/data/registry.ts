@@ -26,8 +26,11 @@ const UI = [
     name: "alert-dialog",
     title: "Alert dialog",
     type: "registry:ui",
+    registryDependencies: [
+      "https://microx-technologies.github.io/microdraw-ui/r/nbutton.json",
+      "https://microx-technologies.github.io/microdraw-ui/r/portal-scope.json",
+    ],
     dependencies: ["@base-ui/react"],
-    registryDependencies: ["https://microx-technologies.github.io/microdraw-ui/r/nbutton.json"],
     files: [
       {
         path: "src/components/ui/alert-dialog.tsx",
@@ -206,6 +209,9 @@ const UI = [
   {
     name: "ndialog",
     type: "registry:ui",
+    registryDependencies: [
+      "https://microx-technologies.github.io/microdraw-ui/r/portal-scope.json",
+    ],
     dependencies: ["@base-ui/react"],
     files: [
       {
@@ -218,6 +224,9 @@ const UI = [
     name: "dialog",
     title: "Dialog",
     type: "registry:ui",
+    registryDependencies: [
+      "https://microx-technologies.github.io/microdraw-ui/r/portal-scope.json",
+    ],
     dependencies: ["@base-ui/react"],
     files: [
       {
@@ -230,6 +239,9 @@ const UI = [
     name: "drawer",
     title: "Drawer",
     type: "registry:ui",
+    registryDependencies: [
+      "https://microx-technologies.github.io/microdraw-ui/r/portal-scope.json",
+    ],
     dependencies: ["@base-ui/react"],
     files: [
       {
@@ -275,6 +287,9 @@ const UI = [
     name: "hover-card",
     title: "Hover card",
     type: "registry:ui",
+    registryDependencies: [
+      "https://microx-technologies.github.io/microdraw-ui/r/portal-scope.json",
+    ],
     dependencies: ["@base-ui/react"],
     files: [
       {
@@ -400,9 +415,23 @@ const UI = [
     ],
   },
   {
+    name: "portal-scope",
+    title: "Portal scope",
+    type: "registry:ui",
+    files: [
+      {
+        path: "src/components/ui/portal-scope.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "popover",
     title: "Popover",
     type: "registry:ui",
+    registryDependencies: [
+      "https://microx-technologies.github.io/microdraw-ui/r/portal-scope.json",
+    ],
     dependencies: ["@base-ui/react"],
     files: [
       {
@@ -475,6 +504,9 @@ const UI = [
     name: "sheet",
     title: "Sheet",
     type: "registry:ui",
+    registryDependencies: [
+      "https://microx-technologies.github.io/microdraw-ui/r/portal-scope.json",
+    ],
     dependencies: ["@base-ui/react"],
     files: [
       {
@@ -487,6 +519,9 @@ const UI = [
     name: "nsheet",
     title: "Sheet",
     type: "registry:ui",
+    registryDependencies: [
+      "https://microx-technologies.github.io/microdraw-ui/r/portal-scope.json",
+    ],
     dependencies: ["@base-ui/react"],
     files: [
       {
@@ -601,6 +636,9 @@ const UI = [
     name: "tooltip",
     title: "Tooltip",
     type: "registry:ui",
+    registryDependencies: [
+      "https://microx-technologies.github.io/microdraw-ui/r/portal-scope.json",
+    ],
     dependencies: ["@base-ui/react"],
     files: [
       {
@@ -613,6 +651,9 @@ const UI = [
     name: "ntooltip",
     title: "Tooltip",
     type: "registry:ui",
+    registryDependencies: [
+      "https://microx-technologies.github.io/microdraw-ui/r/portal-scope.json",
+    ],
     dependencies: ["@base-ui/react"],
     files: [
       {
