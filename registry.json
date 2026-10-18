@@ -1016,6 +1016,42 @@
       ]
     },
     {
+      "name": "browser-window",
+      "title": "Browser Window",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "src/components/ui/browser-window.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "section",
+      "title": "Section",
+      "type": "registry:ui",
+      "registryDependencies": [
+        "https://microx-technologies.github.io/microdraw-ui/r/nbutton.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/section.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "stat-pill",
+      "title": "Stat Pill",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "src/components/ui/stat-pill.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "s1",
       "title": "Star 1",
       "type": "registry:component",
